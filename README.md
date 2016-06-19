@@ -17,6 +17,8 @@ Implement the following functions:
 
 # Something about the solution
 
+Implemented with PYTHON, FLASK, SQLALCHEMY
+
 In src/shop.py there is
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:password@localhost/webshop'
 that is for connetion to MySQL database (what you have to do manually is give access right to
