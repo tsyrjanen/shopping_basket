@@ -31,8 +31,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u_user:u_password@localhost/web
 that is for connetion to MySQL database (what you have to do manually is to create a user u_user with password u_password, and create also webshop database).
 
 Remark also to create virtual environmet:
->virtualenv venv
->source venv/bin/activate
->pip install -r requirements.txt
+$virtualenv venv
+$source venv/bin/activate
+$pip install -r requirements.txt
 
 Sorry for almost no instructions (at the moment)
