@@ -50,6 +50,7 @@ First time use -c option, and next always -b option
 
 curl -X POST -c cookie.txt -H "Content-Type: application/json" -d '{"name":"Table", "amount":"1"}' http://localhost:5000/add_to_basket/
 
-curl -X POST -b cookie.txt -H "Content-Type: application/json" -d '{"name":"Table", "amount":"3"}' http://localhost/add_to_basket/
+curl -X POST -b cookie.txt -H "Content-Type: application/json" -d '{"name":"Table", "amount":"3"}' http://localhost:5000/add_to_basket/
+
 
 Sorry for short instructions (at the moment)
