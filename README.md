@@ -32,7 +32,24 @@ that is for connetion to MySQL database (what you have to do manually is to crea
 
 Remark also to create virtual environmet:
 $virtualenv venv
+
 $source venv/bin/activate
+
 $pip install -r requirements.txt
 
-Sorry for almost no instructions (at the moment)
+And run the service (in your local machine in port 5000):
+
+$python run.py
+
+Manual testing, use curl, for example
+
+Create data into database: curl -X POST -H "Content-Type: application/json" -d '{"name":"Table", "amount":"10", "price":"25"}' http://localhost:5000/add_product/
+
+Do shopping (REMARK you need a file for cookie)!
+First time use -c option, and next always -b option
+
+curl -X POST -c cookie.txt -H "Content-Type: application/json" -d '{"name":"Table", "amount":"1"}' http://localhost:5000/add_to_basket/
+
+curl -X POST -b cookie.txt -H "Content-Type: application/json" -d '{"name":"Table", "amount":"3"}'
+
+Sorry for short instructions (at the moment)
