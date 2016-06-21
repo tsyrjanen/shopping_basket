@@ -90,9 +90,9 @@ The service is now running at localhost:5000
 | URL  | /add_to_basket/ |
 | URL  | /remove_from_basket/ |
 | URL  | /edit_basket/ |
-| URL  | /get_products_paginate/sort/'sort_item'/page/'int:page'/ |
-| URL  | /get_products_price_range/<range>/ |
-| URL  | /get_matchproducts_range_and_sort/product/<name>/range/<range>/sort/<sort_item>/ |
+| URL  | /get_products_paginate/sort/sort_item/page/page_number/ |
+| URL  | /get_products_price_range/from-to/ |
+| URL  | /get_matchproducts_range_and_sort/product/name/range/from_to/sort/sort_item/ |
 
 MORE coming soon ...
 
