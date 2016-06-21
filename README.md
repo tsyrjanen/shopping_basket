@@ -1,4 +1,7 @@
 # shopping_basket
+
+## Task to do
+
 Task is to implement backend application library to product catalog and shopping basket of a web shop.
 
 Product catalog contains at least names, amounts for sale (i.e. stock) and prices of available products.
@@ -20,28 +23,76 @@ Implement the following functions:
 5. Searching product from catalog by matching the beginning of product name,
    filtering the results within given price range (min, max), and sorting by given key (name or price).
 
-# Something about the solution
+# The solution
 
-Implemented with PYTHON, FLASK, SQLALCHEMY
+## Used technologies
 
-In src/shop.py there is
+PYTHON, FLASK, SQLALCHEMY, MYSQL.
+And of course we used python virtualenv.
+
+## Create the environment in ubuntu
+
+'''bash
+sudo apt-get install mysql-server
+sudo apt-get install libmysqlclient-dev
+
+sudo apt-get install virtualenv
+sudo apt-get install python-pip python-dev build-essential 
+sudo pip install --upgrade pip
+sudo pip install --upgrade virtualenv 
+'''
+
+## Create a root user in MySQL
+
+First, use the mysql program to connect to the server as the MySQL root user:
+
+'''
+mysql --user=root mysql
+'''
+
+If you have assigned a password to the root account, you must also supply a --password or -p option.
+
+All what you have to do is to create a webshop database.
+
+'''
+mysql -u root -p
+create database webshop;
+'''
+
+Next edit src/shop.py, there is
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u_user:u_password@localhost/webshop'
 
-that is for connetion to MySQL database (what you have to do manually is to create a user u_user with password u_password, and create also webshop database).
+u_user should be root (or what is you admin user)
+and u_password is the password of the admin user.
 
-Remark also to create virtual environmet:
-$virtualenv venv
+REAMRK that here is a security risk, you have put here password in plain language.
 
-$source venv/bin/activate
+## Run the service
 
-$pip install -r requirements.txt
+Before you run the service you have create a virtual environment.
+In shopping_basket directory give commands
 
-And run the service (in your local machine in port 5000):
+'''bash
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+'''
 
-$python run.py
+And run the service
 
-Manual testing, use curl, for example
+'''bash
+cd src
+python run.py
+'''
+
+The service is now running at localhost:5000
+
+#API
+
+#Testing
+
+##Manual testing, use curl, for example
 
 Create data into database: curl -X POST -H "Content-Type: application/json" -d '{"name":"Table", "amount":"10", "price":"25"}' http://localhost:5000/add_product/
 
@@ -52,5 +103,9 @@ curl -X POST -c cookie.txt -H "Content-Type: application/json" -d '{"name":"Tabl
 
 curl -X POST -b cookie.txt -H "Content-Type: application/json" -d '{"name":"Table", "amount":"3"}' http://localhost:5000/edit_basket/
 
+##Unit test
 
-Sorry for short instructions (at the moment)
+There are some .....
+
+
+#Sorry for short instructions (at the moment)
