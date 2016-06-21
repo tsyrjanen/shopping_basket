@@ -28,7 +28,7 @@ def remove_product():
     except KeyError:
         pass
     return Response(status=403)
-        
+
 @app.route('/edit_product/', methods=['POST'])
 def edit_product():
     content = request.get_json()
@@ -38,7 +38,6 @@ def edit_product():
     except KeyError:
         pass
     return Response(status=403)
-    
 
 @app.route('/add_to_basket/', methods=['POST'])
 def add_to_basket():

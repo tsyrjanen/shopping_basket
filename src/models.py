@@ -1,4 +1,3 @@
-#from app.shop import db
 from shop import db
 
 class Products(db.Model):
@@ -6,7 +5,7 @@ class Products(db.Model):
     name = db.Column(db.String(80))
     amount = db.Column(db.Integer)
     price = db.Column(db.Integer)
-    
+
     def __init__(self, id, name, amount, price):
         self.id = id
         self.name = name

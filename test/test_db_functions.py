@@ -26,7 +26,7 @@ class BasketTests(TestCase):
 
     def test_validate_range_more_than_fails(self):
         self.assertFalse(validate_range('100'))
-    
+
     def test_validate_range_between_OK(self):
         self.assertTrue(validate_range('100-200'))
 
@@ -38,7 +38,7 @@ class BasketTests(TestCase):
         amount = 12
         price= 30300
         self.assertTrue(db_create_product(name, amount, price))
-        
+
     def test_create_product_amount_is_ascii(self):
         name = 'Car'
         amount = 'xyz'

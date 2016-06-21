@@ -18,7 +18,7 @@ def validate_range(range):
     #'5-10' produces [5,10] and it means price between 5 and 10
     #'10-' produces [0,10] and it means cheaper than 10
     #No valid range returns empty list
-    
+
     if '-' in range and len(range.split('-'))==2:
         ok = True
         ranges = []
@@ -34,7 +34,7 @@ def validate_range(range):
             if (ranges[0] == 0 and ranges[1] > 0) or \
             (ranges[0] > 0 and ranges[1] == 0) or \
             (ranges[0] <= ranges[1]):
-                return ranges        
+                return ranges
     return []
 
 def db_create_product(name, amount, price):
@@ -71,25 +71,25 @@ def db_decrease_amount(name, amount):
             if product.amount >= amount:
                 product.amount = product.amount - amount
                 db.session.commit()
-                return True         
+                return True
     return False
-            
+
 def db_increase_amount(name, amount):
     if validate_int((amount,)):
         product = Products.query.filter(Products.name == name).first()
         if product:
             product.amount = product.amount + amount
             db.session.commit()
-            return True         
+            return True
     return False
 
 def db_paginate_products(sort_item, page):
     if not sort_item in ['name', 'price']:
         sort_item = 'name'
-    
+
     return Products.query.order_by(sort_item).paginate(
         Max(page, 1), 5, False).items
-  
+
 def db_products_price_range(range):
     ranges = validate_range(range)
     if ranges:
@@ -124,4 +124,3 @@ def db_match_products_range_and_sort(name, range, sort_item):
         return query
 
     return []
-            

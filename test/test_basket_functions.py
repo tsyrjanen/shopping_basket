@@ -40,7 +40,7 @@ class BasketTests(TestCase):
     def test_add_product_already_in_basket(self):
         basket_add_product('xxxyyy', 1)
         self.assertFalse(basket_add_product('xxxyyy', 1))
-    
+
     def test_add_product_amount_is_not_int(self):
         self.assertFalse(basket_add_product('foobar', 'xyz'))
 
