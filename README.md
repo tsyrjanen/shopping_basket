@@ -81,11 +81,11 @@ The service is now running at localhost:5000
 
 #API
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Tables        | Are           |
+| ------------- |:-------------:|
+| col 3 is      | right-aligneddsfjafhjdfjk kdjfkdsf |
+| col 2 is      | centered    dsfdsadsfdsff  |
+| zebra stripes | are neat      |
 
 coming soon ...
 
