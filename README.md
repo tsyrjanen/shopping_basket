@@ -32,15 +32,12 @@ And of course we used python virtualenv.
 
 ## Create the environment in ubuntu
 
-'''bash
-sudo apt-get install mysql-server
-sudo apt-get install libmysqlclient-dev
-
-sudo apt-get install virtualenv
-sudo apt-get install python-pip python-dev build-essential 
-sudo pip install --upgrade pip
-sudo pip install --upgrade virtualenv 
-'''
+    sudo apt-get install mysql-server
+    sudo apt-get install libmysqlclient-dev
+    sudo apt-get install virtualenv
+    sudo apt-get install python-pip python-dev build-essential 
+    sudo pip install --upgrade pip
+    sudo pip install --upgrade virtualenv 
 
 ## Create a root user in MySQL
 
