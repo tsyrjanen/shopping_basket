@@ -35,30 +35,28 @@ And of course we used python virtualenv.
     sudo apt-get install mysql-server
     sudo apt-get install libmysqlclient-dev
     sudo apt-get install virtualenv
-    sudo apt-get install python-pip python-dev build-essential 
+    sudo apt-get install python-pip python-dev build-essential
     sudo pip install --upgrade pip
-    sudo pip install --upgrade virtualenv 
+    sudo pip install --upgrade virtualenv
 
 ## Create a root user in MySQL
 
 First, use the mysql program to connect to the server as the MySQL root user:
 
-'''
-mysql --user=root mysql
-'''
+
+    mysql --user=root mysql
+
 
 If you have assigned a password to the root account, you must also supply a --password or -p option.
 
 All what you have to do is to create a webshop database.
 
-'''
-mysql -u root -p
-create database webshop;
-'''
+    mysql -u root -p
+    create database webshop;
 
 Next edit src/shop.py, there is
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u_user:u_password@localhost/webshop'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u_user:u_password@localhost/webshop'
 
 u_user should be root (or what is you admin user)
 and u_password is the password of the admin user.
@@ -70,35 +68,34 @@ REAMRK that here is a security risk, you have put here password in plain languag
 Before you run the service you have create a virtual environment.
 In shopping_basket directory give commands
 
-'''bash
-virtualenv venv
-source venv/bin/activate
-pip install -r requirements.txt
-'''
+    virtualenv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
 
 And run the service
 
-'''bash
-cd src
-python run.py
-'''
+    cd src
+    python run.py
 
 The service is now running at localhost:5000
 
 #API
 
+coming soon ...
+
 #Testing
 
 ##Manual testing, use curl, for example
 
-Create data into database: curl -X POST -H "Content-Type: application/json" -d '{"name":"Table", "amount":"10", "price":"25"}' http://localhost:5000/add_product/
+Create data into database
+    curl -X POST -H "Content-Type: application/json" -d '{"name":"Table", "amount":"10", "price":"25"}' http://localhost:5000/add_product/
 
 Do shopping (REMARK you need a file for cookie)!
 First time use -c option, and next always -b option
 
-curl -X POST -c cookie.txt -H "Content-Type: application/json" -d '{"name":"Table", "amount":"1"}' http://localhost:5000/add_to_basket/
+    curl -X POST -c cookie.txt -H "Content-Type: application/json" -d '{"name":"Table", "amount":"1"}' http://localhost:5000/add_to_basket/
 
-curl -X POST -b cookie.txt -H "Content-Type: application/json" -d '{"name":"Table", "amount":"3"}' http://localhost:5000/edit_basket/
+    curl -X POST -b cookie.txt -H "Content-Type: application/json" -d '{"name":"Table", "amount":"3"}' http://localhost:5000/edit_basket/
 
 ##Unit test
 
