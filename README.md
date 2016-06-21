@@ -81,7 +81,7 @@ The service is now running at localhost:5000
 
 #API
 
-| Tables        | Are           |
+| | |
 | ------------- |:-------------:|
 | URL  | / |
 | URL  | /add_product/ |
