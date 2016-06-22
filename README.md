@@ -82,7 +82,7 @@ The service is now running at localhost:5000
 #API
 
 | | |
-| ------------- |:-------------:|
+| ------------- |:-------------|
 | URL  | / |
 | What | Just for testing that service responses 200 OK|
 | Example | curl -X GET http://localhost:5000/ |
