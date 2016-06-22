@@ -84,15 +84,29 @@ The service is now running at localhost:5000
 | | |
 | ------------- |:-------------:|
 | URL  | / |
+| What | Just for testing that service responses 200 OK|
+| Example | curl -X GET http://localhost:5000/ |
 | URL  | /add_product/ |
+| What | Adds one product to database |
+| Example | curl -X POST -H "Content-Type: application/json" -d '{"name":"Table", "amount":"9", "price":"25"}' http://localhost:5000/add_product/ |
 | URL  | /remove_product/ |
+| What | Removes one product from database |
+| Example | curl -X POST -H "Content-Type: application/json" -d '{"name":"Table"}' http://localhost:5000/remove_product/ |
 | URL  | /edit_product/ |
+| What | Changes the price and amount of a product in database |
+| Example | curl -X POST -H "Content-Type: application/json" -d '{"name":"Table", "amount":"120", "price":"20"}' http://localhost:5000/edit_product/ |
 | URL  | /add_to_basket/ |
+| What | Adds product to basket (you need a cookie, -c to create a new cookie, -b to use a cookie) |
+| Example | curl -X POST -c cookie.txt -H "Content-Type: application/json" -d '{"name":"Chair", "amount":"4"}' http://localhost:5000/add_to_basket/|
 | URL  | /remove_from_basket/ |
+| What | Removes product from basket (-b to use your cookie)|
+| Example | curl -X POST -b cookie.txt -H "Content-Type: application/json" -d '{"name":"Chair"}' http://localhost:5000/remove_from_basket/|
 | URL  | /edit_basket/ |
-| URL  | /get_products_paginate/sort/'sort_item'/page/'int:page'/ |
-| URL  | /get_products_price_range/<range>/ |
-| URL  | /get_matchproducts_range_and_sort/product/<name>/range/<range>/sort/<sort_item>/ |
+| What | Change the amount of a product in your basket (-b to use your cookie)|
+| Example | curl -X POST -b cookie.txt -H "Content-Type: application/json" -d '{"Name":"Table", "amount":"6"}' http://localhost:5000/edit_basket/ |
+| URL  | /get_products_paginate/sort/sort_item/page/page_number/ |
+| URL  | /get_products_price_range/from-to/ |
+| URL  | /get_matchproducts_range_and_sort/product/name/range/from_to/sort/sort_item/ |
 
 MORE coming soon ...
 
