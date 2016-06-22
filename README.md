@@ -83,41 +83,41 @@ The service is now running at localhost:5000
 
 | | |
 | ------------- |:-------------|
-| URL  | / |
+| **URL** | / |
 | What | Just for testing that service responses 200 OK|
 | Example | curl -X GET http://localhost:5000/ |
-| URL  | /add_product/ |
+| **URL**  | /add_product/ |
 | What | Adds one product to database |
 | Example | curl -X POST -H "Content-Type: application/json" -d '{"name":"Table", "amount":"9", "price":"25"}' http://localhost:5000/add_product/ |
-| URL  | /remove_product/ |
+| **URL**  | /remove_product/ |
 | What | Removes one product from database |
 | Example | curl -X POST -H "Content-Type: application/json" -d '{"name":"Table"}' http://localhost:5000/remove_product/ |
-| URL  | /edit_product/ |
+| **URL**  | /edit_product/ |
 | What | Changes the price and amount of a product in database |
 | Example | curl -X POST -H "Content-Type: application/json" -d '{"name":"Table", "amount":"120", "price":"20"}' http://localhost:5000/edit_product/ |
-| URL  | /add_to_basket/ |
+| **URL**  | /add_to_basket/ |
 | What | Adds product to basket (you need a cookie, -c to create a new cookie, -b to use a cookie) |
 | Example | curl -X POST -c cookie.txt -H "Content-Type: application/json" -d '{"name":"Chair", "amount":"4"}' http://localhost:5000/add_to_basket/|
-| URL  | /remove_from_basket/ |
+| **URL**  | /remove_from_basket/ |
 | What | Removes product from basket (-b to use your cookie)|
 | Example | curl -X POST -b cookie.txt -H "Content-Type: application/json" -d '{"name":"Chair"}' http://localhost:5000/remove_from_basket/|
-| URL  | /edit_basket/ |
+| **URL** | /edit_basket/ |
 | What | Change the amount of a product in your basket (-b to use your cookie)|
 | Example | curl -X POST -b cookie.txt -H "Content-Type: application/json" -d '{"Name":"Table", "amount":"6"}' http://localhost:5000/edit_basket/ |
-| URL  | /get_products_paginate/sort/sort_item/page/page_number/ |
+| **URL** | /get_products_paginate/sort/sort_item/page/page_number/ |
 | What | Queries products from database with basic pagination (now 5 products per page)|
 | | sort_item can 'name' or 'price' |
 | | page_number is the page number what you want |
 | Example | curl -X GET http://localhost:5000/get_products_paginate/sort/name/page/1/
-| URL  | /get_products_price_range/from-to/ |
+| **URL** | /get_products_price_range/from-to/ |
 | What | Queries products from database, grouped by price ranges |
 | | Range could be 10-50. Or 25-. Or -99. Range is fully customizable |
 | Example | curl -X GET http://localhost:5000/get_products_proce_range/200-300/ |
-| URL  | /get_matchproducts_range_and_sort/product/name/range/from_to/sort/sort_item/ |
+| **URL** | /get_matchproducts_range_and_sort/product/name/range/from_to/sort/sort_item/ |
 | What | Searches product from db by matching the beginning of product name, filtering the results within given price range (min-max), and sorting by given key (name or price). |
 | Example | curl -X GET http://localhost:5000/get_matchproducts_range_and_sort/product/Ta/range/0-200/sort/name/|
 
-REMARK: add_to_basket, remove_from_basket and edit basket returns your basket in json format
+**REMARK:** add_to_basket, remove_from_basket and edit basket returns your basket in json format
 
 MORE coming soon ...
 
