@@ -105,8 +105,18 @@ The service is now running at localhost:5000
 | What | Change the amount of a product in your basket (-b to use your cookie)|
 | Example | curl -X POST -b cookie.txt -H "Content-Type: application/json" -d '{"Name":"Table", "amount":"6"}' http://localhost:5000/edit_basket/ |
 | URL  | /get_products_paginate/sort/sort_item/page/page_number/ |
+| What | Queries products from database with basic pagination (now 5 products per page)|
+| | sort_item can 'name' or 'price' |
+| | page_number is the page number what you want |
+| Example | curl -X GET http://localhost:5000/get_products_paginate/sort/name/page/1/
 | URL  | /get_products_price_range/from-to/ |
+| What | Queries products from database, grouped by price ranges |
+| | Range could be 10-50. Or 25-. Or -99. Range is fully customizable |
+| Example | curl -X GET http://localhost:5000/get_products_proce_range/200-300/ |
 | URL  | /get_matchproducts_range_and_sort/product/name/range/from_to/sort/sort_item/ |
+| What | Searches product from db by matching the beginning of
+| product name, filtering the results within given price range (min-max), and sorting by given key (name or price). |
+| Example | curl -X GET http://localhost:5000/get_matchproducts_range_and_sort/product/Ta/range/0-200/sort/name/|
 
 MORE coming soon ...
 
