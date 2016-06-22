@@ -117,6 +117,8 @@ The service is now running at localhost:5000
 | What | Searches product from db by matching the beginning of product name, filtering the results within given price range (min-max), and sorting by given key (name or price). |
 | Example | curl -X GET http://localhost:5000/get_matchproducts_range_and_sort/product/Ta/range/0-200/sort/name/|
 
+REMARK: add_to_basket, remove_from_basket and edit basket returns your basket in json format
+
 MORE coming soon ...
 
 #Testing
